@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: TSRpcClientDemo
+tsrpc:
+  application:
+    applicationId: tsRpcClientDemo
+    version: 1.0
+  common:
+    protocol: http
+    transformType: jackson
+  registry:
+    enable: true
+    name: nacos
+    serverList: 127.0.0.1:8848
+    namespace: test
+  client:
+    common:
+      balancerType: random
+      basePackage: com.wts
+      timeout: 1000000
+#      invokerFilters:
+#        - com.wts.tsrpc.client.filter.LogClientInvokerFilter
+#        - com.wts.tsrpc.client.filter.CheckClientInvokerFilter
+    thread-pool:
+      corePoolSize: 102
+      maxPoolSize: 204
+      queueSize: 102
+logging:
+  level:
+    root: debug
+
+
